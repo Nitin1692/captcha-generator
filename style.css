@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(152, 97, 203);
+}
+
+.wrapper{
+    width: 485px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px 30px 40px;
+}
+
+.wrapper .captcha-area{
+    display: flex;
+    height: 65px;
+    margin: 30px 0 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.captcha-area .captcha-img{
+    height: 100%;
+    width: 345px;
+    user-select: none;
+    position: relative;
+    border-radius: 5px;
+    background: #000;
+}
+
+.captcha-img img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    object-fit: cover;
+}
+
+.wrapper header{
+    color: rgb(152, 97, 203);
+    font-weight: 500;
+    font-size: 500;
+    text-align: center;
+}
+
+.captcha-img .captcha{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 26px;
+    letter-spacing:2px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 2px #a9a9a9;
+    font-family: 'Noto Serif', serif;
+}
+
+.wrapper button{
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(152, 97, 203);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.captcha-area .reload-btn{
+    width: 75px;
+    height: 100%;
+    font-size: 25px;
+}
+
+.wrapper .input-area{
+    height: 60px;
+    width: 100%;
+    position: relative;
+}
+
+.input-area input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.input-area input:is(:focus, :valid){
+    border: 2px solid rgb(152, 97, 203);
+    padding-left: 19px;
+}
+.input-area .check-btn{
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 17px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.wrapper .status-txt{
+    display: none;
+    margin: 20px 0 -5px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.captcha-area .reload-btn i{
+    transition: transfom 0.3s ease;
+}
+
+.captcha-area .reload-btn:hover i {
+    transform: rotate(15deg);
+}
+
+.input-area input:valid + .check-btn{
+    opacity: 1;
+    pointer-events: auto;
+}
